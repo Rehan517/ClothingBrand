@@ -50,9 +50,9 @@ export default function Home({ products }: Props) {
 
 
   return (
-    <div>
+    <div className=''>
       <Header />
-      <main className=''>
+      <main>
         <Landing />
         <Banner />
       </main>
@@ -78,17 +78,17 @@ export default function Home({ products }: Props) {
       </section>
 
       <section className='lg:mt-[80px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 bg-black'>
-        <div className='w-[100%] relative h-[150px] md:h-[250px] lg:h-[450px]'>
+        <div className='w-[100%] relative h-[200px] md:h-[250px] lg:h-[450px]'>
         <Image className="" alt='' src="/Collage1.jpeg" layout='fill' objectFit='cover'/>
         </div>
 
-        <div className='w-[100%] relative h-[150px] md:h-[250px] lg:h-[450px]'>
+        <div className='w-[100%] relative h-[200px] md:h-[250px] lg:h-[450px]'>
         <Image className="" alt='' src="/collage2.jpeg" layout='fill' objectFit='cover'/>
         </div>
-        <div className='w-[100%] relative h-[150px] md:h-[250px] lg:h-[450px]'>
+        <div className='w-[100%] relative h-[200px] md:h-[250px] lg:h-[450px]'>
         <Image className="" alt='' src="/collage3.jpeg" layout='fill' objectFit='cover'/>
         </div>
-        <div className='w-[100%] relative h-[150px] md:h-[250px] lg:h-[450px]'>
+        <div className='w-[100%] relative h-[200px] md:h-[250px] lg:h-[450px]'>
         <Image className="" alt='' src="/collage4.jpeg" layout='fill' objectFit='cover'/>
         </div>
       </section>

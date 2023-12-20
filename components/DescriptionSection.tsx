@@ -48,7 +48,7 @@ function DescriptionSection({ product }: Props) {
 
 
 
-                <div className='lg:w-[50%] flex flex-col items-end mt-[120px] lg:mt-0'>
+                <div className='lg:w-[50%] flex flex-col items-end mt-[120px] lg:mt-0 pt-[40px] lg:pt-0'>
                     <div className={`w-[60%] lg:w-[50%]`}>
 
                         <div className='relative h-[240px] md:h-[500px] lg:h-[600px] w-full'>

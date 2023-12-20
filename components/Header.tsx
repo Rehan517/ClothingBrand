@@ -1,26 +1,60 @@
-import React from 'react'
-import { ShoppingBagIcon } from '@heroicons/react/24/outline'
-import { ShoppingCartIcon } from '@heroicons/react/24/solid'
+import React, { useEffect, useState } from 'react'
+import { ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, ShoppingCartIcon } from '@heroicons/react/24/solid'
 
 function Header() {
+
+    const [isButtonPressed, setButtonPressed] = useState(false);
+
+
+    const handleBarsPress = () => {
+        setButtonPressed(true);
+        document.body.classList.add("menu--open")
+        
+    };
+    const handleCrossPress = () => {
+        setButtonPressed(false);
+        document.body.classList.remove("menu--open")
+    };
+
+
     return (
-        <header className=' grid grid-cols-2 lg:grid-cols-3 items-center p-4'>
-            
+        <header >
+            <div className=' grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center p-4'>
                 <div className='w-full space-x-4 hidden md:block lg:block'>
                     <a href="">Shop</a>
                     <a href="">About</a>
                     <a href="">Contact</a>
                 </div>
                 <div className='flex items-center justify-center'>
-                    <div>
+                    <div className='w-full'>
                         <a href="" className='text-2xl font-bold'>ABUNDANCE</a>
                     </div>
-                    
-                </div> 
-            
-            <div className='flex items-center justify-end'>
-                <ShoppingBagIcon className='h-6 w-6' />
-                {/* <ShoppingCartIcon className='h-6 w-6'/> */}
+
+                </div>
+
+                <div className='flex items-center justify-end'>
+                    <button className="block md:hidden lg:hidden" onClick={handleBarsPress}>
+                        <Bars3Icon className='h-7 w-7' />
+                    </button>
+                    <ShoppingBagIcon className='h-6 w-6 ml-3' />
+                </div>
+            </div>
+            <div className={`absolute bg-white top-0 left-0 w-[100vw] h-[100vh] z-[100] flex items-center justify-center transition-all ${isButtonPressed ? "visible opacity-1": "invisible opacity-0 "}`}>
+                <button className='absolute top-[10px] right-[20px] p-[8px] text-black' onClick={handleCrossPress} >
+                    <XMarkIcon className='h-6 w-6' />
+                </button>
+                <ul className='flex flex-col items-center'>
+                    <li className='py-[20px]'>
+                        <a href="/" className='text-black text-[30px]'>Shop</a>
+                    </li>
+                    <li className='py-[20px]'>
+                        <a href="/" className='text-black text-[30px]'>About</a>
+                    </li>
+                    <li className='py-[20px]'>
+                        <a href="/" className='text-black text-[30px]'>Contact</a>
+                    </li>
+                </ul>
             </div>
         </header>
     )
