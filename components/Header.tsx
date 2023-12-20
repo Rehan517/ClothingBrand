@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Bars3Icon, ShoppingCartIcon } from '@heroicons/react/24/solid'
+import Link from 'next/link';
 
 function Header() {
 
@@ -22,13 +23,13 @@ function Header() {
         <header >
             <div className=' grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center p-4'>
                 <div className='w-full space-x-4 hidden md:block lg:block'>
-                    <a href="">Shop</a>
-                    <a href="">About</a>
-                    <a href="">Contact</a>
+                    <Link href="/shop">Shop</Link>
+                    <Link href="">About</Link>
+                    <Link href="">Contact</Link>
                 </div>
                 <div className='flex items-center justify-center'>
-                    <div className='w-full'>
-                        <a href="" className='text-2xl font-bold'>ABUNDANCE</a>
+                    <div className='w-full text-left lg:text-center'>
+                        <Link href="/" className='text-2xl font-bold'>THE IMPERIAL</Link>
                     </div>
 
                 </div>
@@ -46,13 +47,13 @@ function Header() {
                 </button>
                 <ul className='flex flex-col items-center'>
                     <li className='py-[20px]'>
-                        <a href="" className='text-black text-[30px]'>Shop</a>
+                        <Link href="/shop" className='text-black text-[30px]'>Shop</Link>
                     </li>
                     <li className='py-[20px]'>
-                        <a href="" className='text-black text-[30px]'>About</a>
+                        <Link href="" className='text-black text-[30px]'>About</Link>
                     </li>
                     <li className='py-[20px]'>
-                        <a href="" className='text-black text-[30px]'>Contact</a>
+                        <Link href="" className='text-black text-[30px]'>Contact</Link>
                     </li>
                 </ul>
             </div>
