@@ -46,13 +46,13 @@ function Header() {
                 </button>
                 <ul className='flex flex-col items-center'>
                     <li className='py-[20px]'>
-                        <a href="/" className='text-black text-[30px]'>Shop</a>
+                        <a href="" className='text-black text-[30px]'>Shop</a>
                     </li>
                     <li className='py-[20px]'>
-                        <a href="/" className='text-black text-[30px]'>About</a>
+                        <a href="" className='text-black text-[30px]'>About</a>
                     </li>
                     <li className='py-[20px]'>
-                        <a href="/" className='text-black text-[30px]'>Contact</a>
+                        <a href="" className='text-black text-[30px]'>Contact</a>
                     </li>
                 </ul>
             </div>
