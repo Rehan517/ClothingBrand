@@ -60,15 +60,15 @@ export default function Home({ products }: Props) {
 
         {windowWidth <= 400 ?
           <div className='w-full flex justify-between'>
-            <Product product={products[0]} key={products[0]._id} />
-            <Product product={products[1]} key={products[1]._id} />
+            <Product product={products[0]} key={products[0]._id} width="w-[49%]"/>
+            <Product product={products[1]} key={products[1]._id} width="w-[49%]"/>
 
           </div>
           :
           <div className='w-full flex justify-between'>
-            <Product product={products[0]} key={products[0]._id} />
-            <Product product={products[1]} key={products[1]._id} />
-            <Product product={products[2]} key={products[2]._id} />
+            <Product product={products[0]} key={products[0]._id} width="w-[100%]"/>
+            <Product product={products[1]} key={products[1]._id} width="w-[100%]"/>
+            <Product product={products[2]} key={products[2]._id} width="w-[100%]"/>
           </div>}
 
       </section>
@@ -89,7 +89,7 @@ export default function Home({ products }: Props) {
         <Image className="" alt='' src="/collage3.jpeg" layout='fill' objectFit='cover'/>
         </div>
         <div className='w-[100%] relative h-[200px] md:h-[250px] lg:h-[450px]'>
-        <Image className="" alt='' src="/collage4.jpeg" layout='fill' objectFit='cover'/>
+        <Image className="" alt='' src="/collage4.jpeg" layout='fill' objectFit='cover' sizes=''/>
         </div>
       </section>
 

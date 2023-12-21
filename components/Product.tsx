@@ -6,9 +6,10 @@ import React, { useEffect, useState } from 'react'
 
 interface Props {
     product: Product;
+    width: String;
 }
 
-function Product({ product }: Props) {
+function Product({ product, width }: Props) {
     const [windowWidth, setWindowWidth] = useState(1600);
 
   useEffect(() => {
@@ -33,7 +34,7 @@ function Product({ product }: Props) {
 
     return (
         
-        <div className={`pt-[40px] md:pt-[60px] lg:pt-[80px] ${ windowWidth<= 400 ? "w-[49%]" : "w-[31.8%]"}`}>
+        <div className={`pt-[40px] md:pt-[60px] lg:pt-[80px] pl-3 ${ width}`}>
             
             <div className='relative h-[200px] sm:h-[250px] md:h-[350px] lg:h-[650px] w-full items-start'>
                 <a href="">
@@ -51,3 +52,5 @@ function Product({ product }: Props) {
 }
 
 export default Product
+
+// ${ windowWidth<= 400 ? "w-[49%]" : "w-[31.8%]"}
