@@ -17,9 +17,9 @@ function shop({ products }: Props) {
 
         <section className='grid grid-cols-2 lg:grid-cols-3 max-w-[90%] w-[1650px] mx-auto '>
             {products.map((product) =>(
-                <div className='w-full'>
+                
                 <Product product={product} key ={product._id} width="w-[100%]"/>
-                </div>
+                
             ))}
         </section>
     </div>
