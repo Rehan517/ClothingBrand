@@ -22,7 +22,7 @@ function Header() {
     return (
         <header >
             <div className=' grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 items-center p-4'>
-                <div className='w-full space-x-4 hidden md:block lg:block'>
+                <div className='w-full space-x-4 hidden md:block lg:block font-light'>
                     <Link href="/shop">Shop</Link>
                     <Link href="">About</Link>
                     <Link href="">Contact</Link>

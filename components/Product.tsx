@@ -1,7 +1,8 @@
 import { urlFor } from '@/sanity';
-import { url } from 'inspector';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 interface Props {
@@ -37,9 +38,9 @@ function Product({ product, width }: Props) {
         <div className={`pt-[40px] md:pt-[60px] lg:pt-[80px] pl-3 ${ width}`}>
             
             <div className='relative h-[200px] sm:h-[250px] md:h-[350px] lg:h-[650px] w-full items-start'>
-                <a href="">
+                <Link href={`/${product.slug.current}`}>
                     <Image alt='' src={urlFor(product.image[0]).url()} layout='fill' objectFit='cover' />
-                </a>
+                </Link>
             </div>
             <div className='pt-4 font-light'>
                 <a href="">
