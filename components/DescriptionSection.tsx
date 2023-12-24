@@ -52,12 +52,12 @@ function DescriptionSection({ product }: Props) {
                     <div className={`w-[60%] lg:w-[50%]`}>
 
                         <div className='relative h-[240px] md:h-[500px] lg:h-[600px] w-full'>
-                            <a href="">
+                            <a href={`/${product.slug.current}`}>
                                 <Image alt='' src={urlFor(product.image[0]).url()} layout='fill' objectFit='cover' />
                             </a>
                         </div>
                         <div className='pt-4 font-light'>
-                            <a href="">
+                            <a href={`/${product.slug.current}`}>
                                 <p>{product.title}</p>
                             </a>
                             <p>${product.price}</p>
