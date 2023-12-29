@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Bars3Icon, ShoppingCartIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
+import { selectBasketItems } from '@/redux/basketSlice';
 
 function Header() {
 
@@ -17,6 +19,8 @@ function Header() {
         setButtonPressed(false);
         document.body.classList.remove("menu--open")
     };
+
+    const items = useSelector(selectBasketItems)
 
 
     return (
@@ -38,7 +42,16 @@ function Header() {
                     <button className="block md:hidden lg:hidden" onClick={handleBarsPress}>
                         <Bars3Icon className='h-7 w-7' />
                     </button>
+                    <div>
+                    {items.length > 0 &&(
+                         <span className='absolute right-3 top-5 z-50 flex h-[14px] w-[14px] items-center justify-center
+                         rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-[10px] text-white'>
+                             {items.length}
+                         </span>
+                    )}
                     <ShoppingBagIcon className='h-6 w-6 ml-3' />
+                    </div>
+                    
                 </div>
             </div>
             <div className={`absolute bg-white top-0 left-0 w-[100vw] h-[100vh] z-[100] flex items-center justify-center transition-all ${isButtonPressed ? "visible opacity-1": "invisible opacity-0 "}`}>

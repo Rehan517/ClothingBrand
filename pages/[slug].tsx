@@ -7,19 +7,30 @@ import Link from 'next/link';
 import { urlFor } from '@/sanity';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '@/redux/basketSlice';
+import toast from "react-hot-toast"
 
 interface Props {
     products: Product[]
+    // product: Product
 
 }
 
-function ProductPage({ products }: Props) {
+function ProductPage({ products}: Props) {
     const params = useParams();
     const slug = params.slug
-    const product = products.find((product) => product.slug.current === slug)
-    // console.log(products)
+    const product = products.find((product) => product.slug.current === slug) as Product
     console.log(product)
-    console.log(slug)
+    const dispatch = useDispatch();
+    const addItemToBasket = () =>{
+        dispatch(addToBasket(product))
+
+        toast.success(`${product.title} added to basket`, {
+            position: "bottom-center",
+        })
+    }
+    
 
 
     return (
@@ -54,7 +65,7 @@ function ProductPage({ products }: Props) {
 
                         <input type="number" name="" value="1" id="" className='border border-black w-[15%] lg:w-[10%] h-[50px] pl-4 font-bold mt-2'/>
 
-                        <button className='w-[100%] border border-balck mt-10 py-4 text-white bg-black font-bold'>Add to Cart</button>
+                        <button className='w-[100%] border border-balck mt-10 py-4 text-white bg-black font-bold' onClick={addItemToBasket}>Add to Cart</button>
                     </div>
                 </div>
             </div>
