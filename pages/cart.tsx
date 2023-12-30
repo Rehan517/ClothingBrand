@@ -9,20 +9,20 @@ import Footer from '@/components/Footer'
 
 function cart() {
     const items = useSelector(selectBasketItems)
-    const basketTotal = useSelector(selectBasketTotal)
-    const router = useRouter()
-    const [groupedItemsInBasket, setGroupedItemsInBasket] = useState(
+    const BasketTotal = useSelector(selectBasketTotal)
+    const Router = useRouter()
+    const [GroupedItemsInBasket, SetGroupedItemsInBasket] = useState(
         {} as { [key: string]: Product[] }
     )
     //Group all the same items together
     useEffect(() => {
-        const groupedItems = items.reduce(
+        const GroupedItems = items.reduce(
             (results, item) => {
                 (results[item._id] = results[item._id] || []).push(item)
                 return results
             }, {} as { [key: string]: Product[] })
 
-            setGroupedItemsInBasket(groupedItems)
+            SetGroupedItemsInBasket(GroupedItems)
     }, [items])
     return (
         <div className='min-h-screen overflow-hidden bg-white'>
@@ -38,7 +38,7 @@ function cart() {
                     </h1>
                     <p className='my-4'>Free deliver and free returns</p>
                     {items.length === 0 && (
-                        <button onClick={() => router.push("/")} className='bg-black text-white py-4 px-6 rounded-lg font-semibold'>
+                        <button onClick={() => Router.push("/")} className='bg-black text-white py-4 px-6 rounded-lg font-semibold'>
                             Continue Shopping
                         </button>
                     )
@@ -47,13 +47,13 @@ function cart() {
                 </div>
                 {items.length > 0 && (
                     <div>
-                        {Object.entries(groupedItemsInBasket).map(([key, items]) => (
+                        {Object.entries(GroupedItemsInBasket).map(([key, items]) => (
                             <CheckoutProduct key={key} items ={items} id = {key}/>
                         ))}
                         <div className='my-12 mt-6 ml-auto max-w-xl'>
                             <div className='flex justify-between'>
                                 <p className=''>Subtotal</p>
-                                <p className='font-bold text-2xl'>${basketTotal.toFixed(2)}</p>
+                                <p className='font-bold text-2xl'>${BasketTotal.toFixed(2)}</p>
                             </div>
                             <button className='w-[100%] border border-balck mt-10 py-4 text-white bg-black font-bold'>Checkout</button>
                         </div>
