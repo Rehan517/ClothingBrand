@@ -11,6 +11,7 @@ interface Props {
 
 function shop({ products }: Props) {
     console.log(products)
+
   return (
     <div>
         <Header/>

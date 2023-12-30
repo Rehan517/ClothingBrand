@@ -21,7 +21,7 @@ function ProductPage({ products}: Props) {
     const params = useParams();
     const slug = params.slug
     const product = products.find((product) => product.slug.current === slug) as Product
-    console.log(product)
+    
     const dispatch = useDispatch();
     const addItemToBasket = () =>{
         dispatch(addToBasket(product))

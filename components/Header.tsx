@@ -42,14 +42,16 @@ function Header() {
                     <button className="block md:hidden lg:hidden" onClick={handleBarsPress}>
                         <Bars3Icon className='h-7 w-7' />
                     </button>
-                    <div>
+                    <div className='relative cursor-pointer'>
                     {items.length > 0 &&(
-                         <span className='absolute right-3 top-5 z-50 flex h-[14px] w-[14px] items-center justify-center
+                         <span className='absolute -right-1 -top-1 z-50 flex h-[14px] w-[14px] items-center justify-center
                          rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-[10px] text-white'>
                              {items.length}
                          </span>
                     )}
+                    <Link href="/cart">
                     <ShoppingBagIcon className='h-6 w-6 ml-3' />
+                    </Link>
                     </div>
                     
                 </div>
