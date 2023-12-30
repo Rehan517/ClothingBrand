@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import CheckoutProduct from '@/components/CheckoutProduct'
 import Footer from '@/components/Footer'
 
-function cart() {
+function Cart() {
     const items = useSelector(selectBasketItems)
     const BasketTotal = useSelector(selectBasketTotal)
     const Router = useRouter()
@@ -68,4 +68,4 @@ function cart() {
     )
 }
 
-export default cart
+export default Cart
