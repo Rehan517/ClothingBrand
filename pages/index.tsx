@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import { urlFor } from '@/sanity';
 import DescriptionSection from '@/components/DescriptionSection'
 import Footer from '@/components/Footer'
+import Head from 'next/head'
 
 
 
@@ -51,6 +52,10 @@ export default function Home({ products }: Props) {
 
   return (
     <div className=''>
+      <Head>
+        <title>Imperial</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <main>
         <Landing />
